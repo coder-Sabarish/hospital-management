@@ -1,0 +1,65 @@
+Patients:
+	Name
+	Gender
+	Mobile Number
+	Email
+	Password
+	Aadhar Number
+	status (booked) (not input)
+	Patient Guardian (optional)
+	Guardian mobile number (optional)
+	HasInsurence
+	Bill due
+	
+Workers:
+	Name
+	Role
+	Gender
+	Availability
+	Available Time
+	Number
+	Email
+	Password
+	Photos
+	Speciality
+	Salary
+	Location
+	Experience years
+	Date of joining
+	Date of quiting
+	Assigned Patients (Array)
+	Patients Limit
+	
+logs:
+	isEmergency
+	Patient Id
+	Doctor Id
+	Booking Id
+	AdmittedDate
+	DischargeDate
+	Admitted at
+	room Alloted
+	Total Amount
+	Amount Paid
+	
+Appointment Booking:
+	Patient Id
+	Guardian (Array)
+	Guardian Number
+	issue Categery
+	Booking Date (Slot availability)
+	
+Facilities:
+	General ward bed (count)
+	Normal Rooms
+	Vip rooms
+	Icu count
+	Operation Theater count
+	Amulence count
+	
+	
+===========================================================================================================================================================================
+	
+	
+	
+	
