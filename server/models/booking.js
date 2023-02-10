@@ -8,8 +8,9 @@ const BookingSchema = new Schema({
     },
     guardian : String,
     guardian_number: {
-        type: String,
-        min: [1000000000, "Enter a Valid Phone number"]
+        type: Number,
+        min: [1000000000, "Enter a Valid Phone number"],
+        max: [9999999999, "Enter a Valid Phone number"],
     },
     issue_catagery: {
         type: String,
