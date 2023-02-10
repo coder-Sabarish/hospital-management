@@ -37,8 +37,7 @@ logs:
 	Booking Id
 	AdmittedDate
 	DischargeDate
-	Admitted at
-	room Alloted
+	Room Alloted
 	Total Amount
 	Amount Paid
 	
