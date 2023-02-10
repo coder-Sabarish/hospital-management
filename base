@@ -6,17 +6,17 @@ Patients:
 	Password
 	Aadhar Number
 	status (booked) (not input)
-	Patient Guardian (optional)
-	Guardian mobile number (optional)
 	HasInsurence
 	Bill due
 	
-Workers:
+Worker:
 	Name
 	Role
 	Gender
-	Availability
-	Available Time
+	Availabile
+	Available Time:
+		from
+		to
 	Number
 	Email
 	Password
@@ -29,6 +29,7 @@ Workers:
 	Date of quiting
 	Assigned Patients (Array)
 	Patients Limit
+	active
 	
 logs:
 	isEmergency
@@ -37,8 +38,7 @@ logs:
 	Booking Id
 	AdmittedDate
 	DischargeDate
-	Admitted at
-	room Alloted
+	Room Alloted
 	Total Amount
 	Amount Paid
 	
