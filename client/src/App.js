@@ -1,5 +1,3 @@
-import React from "react";
-import Login from "./Pages/Login/Login";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import Signup from "./Pages/Login/Signup";
 
