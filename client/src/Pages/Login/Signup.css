@@ -1,18 +1,24 @@
-#radio {
-  display: inline;
-}
-
-#radio input {
-  margin-left: 20px;
-}
-
 form {
-  display: inline-block;
-  background-color: rgb(219, 219, 219);
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(235, 235, 235);
   padding: 30px;
+  width: 50%;
 }
 
-.form {
-  display:flex;
-  justify-content: center;
+/* .mb-3 {
+  display: flex;
+} */
+
+.page {
+  display: flex;
+}
+
+.title {
+  color: blue;
+  text-align: center;
+}
+
+.image {
+  width: 50%;
 }
