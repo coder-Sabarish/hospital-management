@@ -1,0 +1,14 @@
+.form {
+  background-image: url("./assets/health-2082630.jpg");
+  background-size: 100% 100%;
+  height: ;
+  padding: 15%;
+}
+form {
+  background-color: rgb(172, 208, 240);
+  width: fit-content;
+  border-radius: 12%;
+  padding: 5%;
+}
+label {
+}
