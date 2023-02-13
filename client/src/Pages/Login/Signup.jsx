@@ -44,7 +44,7 @@ const Signup = () => {
       </Form.Group>
 
       <Form.Group className="mb-3">
-        <Form.Label>Confirm Password</Form.Label>
+        <Form.Label>Conform Password</Form.Label>
         <Form.Control type="password" placeholder="re-enter Password" />
       </Form.Group>
 
