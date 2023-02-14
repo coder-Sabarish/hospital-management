@@ -35,7 +35,6 @@ const PatientSchema = new Schema({
     },
     status: {
         type: String,
-        required: [true,"Booking status is Required"]
     },
     has_insurence : {
         type: Boolean,

@@ -1,0 +1,53 @@
+.content {
+  display: flex;
+  background-color: #fcfcfc;
+}
+.sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: fit-content;
+  border: solid;
+
+  width: 50%;
+  border: none;
+  margin-right: 50%;
+}
+.half {
+  width: 50%;
+}
+.mb-3 {
+  display: flex;
+}
+.log {
+  border: solid;
+  margin: auto;
+  margin-top: auto;
+}
+.imginary {
+  margin-left: 50%;
+  background-image: url("./assets/health-2082630.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  position: fixed;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(235, 235, 235);
+  width: 50%;
+}
+
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  color: blue;
+  text-align: center;
+}

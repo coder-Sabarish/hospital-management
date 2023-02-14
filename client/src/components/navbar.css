@@ -1,0 +1,15 @@
+.navbar{
+    background: #2e158c !important;
+}
+.brand,.list_item{
+    color: white !important;
+}
+
+.list_item:hover{
+    color:tomato !important;
+}
+.btn{
+    background-color:tomato;
+    border: none;
+    border-radius: 20px;
+}
