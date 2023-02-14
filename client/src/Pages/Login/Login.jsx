@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/navbar";
+//import Navbar from "../../components/navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Login.css";
@@ -7,7 +7,7 @@ import "./Login.css";
 function Login() {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="content">
         <div className="sep">
           <form

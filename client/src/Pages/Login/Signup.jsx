@@ -4,11 +4,11 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Navbar from "../components/navbar";
+//import Navbar from "../../components/navbar";
 const Signup = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="content">
         <div className="sep" style={{}}>
           <Form
