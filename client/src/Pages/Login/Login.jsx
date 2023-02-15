@@ -24,7 +24,6 @@ function Login() {
         const LoggedIn = await LoginResponse.json();
         if(!LoggedIn.msg){
           localStorage.setItem("userProfile", JSON.stringify(LoggedIn.token));
-          console.log(JSON.parse(localStorage.getItem('userProfile')));
           navigate("/home");
          }
          else{

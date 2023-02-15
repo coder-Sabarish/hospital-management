@@ -26,7 +26,7 @@ const navbar = () => {
       <Navbar bg="navbar" expand="lg">
         <Container>
           <Navbar.Brand href="#home" className="brand">
-            React-Bootstrap
+            KEC Hospital
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
