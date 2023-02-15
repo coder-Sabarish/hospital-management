@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const authRoute = require('./routes/AuthRoutes')
 
@@ -9,13 +10,14 @@ dotenv.config();
 const app = express();
 
 //middlewares
-app.use(bodyParser.json({limit: "30mb", extended: true}));
-app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 
 //Routes
 app.use("/auth", authRoute);
-app.use("/", (req,res)=> {res.send("fs");});
 
 //mongoose connection
 const PORT = process.env.PORT || 6000;

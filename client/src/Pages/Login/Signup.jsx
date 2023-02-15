@@ -1,11 +1,40 @@
 import React from "react";
 import "./Login.css";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-//import Navbar from "../../components/navbar";
+import { useNavigate } from "react-router-dom";
+
 const Signup = () => {
+
+  const navigate = useNavigate();
+  const handleSubmit = async(event) => {
+    event.preventDefault();
+    const SignupResponse = await fetch('http://localhost:5000/auth/signup',{
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ 
+        "name" : event.target.name.value,
+        "mobile_numer" : event.target.mobile_numer.value,
+        "aadhar_number" : event.target.aadhar_number.value,
+        "email" : event.target.email.value,
+        "password" : event.target.password.value,
+        "gender" : event.target.gender.value,
+        "has_insurence" : event.target.insurance.value==="yes"? true:false
+      })
+    });
+        const SignedUp = await SignupResponse.json();
+        if(!SignedUp.error){
+          console.log(SignedUp);
+          navigate("/login");
+         }
+         else{
+          console.log(SignedUp.error)
+         }
+  };
+
   return (
     <div>
       {/* <Navbar /> */}
@@ -19,32 +48,33 @@ const Signup = () => {
               justifyContent: "center",
               borderRadius: "1em",
             }}
+            onSubmit={(handleSubmit)}
           >
             <h2 className="title">Signup</h2>
             <Form.Group className="mb-3">
-              <Form.Control type="text" placeholder="Enter Name" />
+              <Form.Control name="name" type="text" placeholder="Enter Name" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control type="text" placeholder="Mobile Number" />
+              <Form.Control name="mobile_numer" type="text" placeholder="Mobile Number" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control type="text" placeholder="Aadhar Number" />
+              <Form.Control name="aadhar_number" type="text" placeholder="Aadhar Number" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control name="email" type="email" placeholder="Enter email" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control name="password" type="password" placeholder="Password" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control type="password" placeholder="re-enter Password" />
+              <Form.Control name="Name" type="password" placeholder="re-enter Password" />
             </Form.Group>
-            <Form.Group className="mb-3">
-              <DropdownButton variant="outline-secondary" title="Gender">
-                <Dropdown.Item href="#">Male</Dropdown.Item>
-                <Dropdown.Item href="#">Female</Dropdown.Item>
-                <Dropdown.Item href="#">Others</Dropdown.Item>
-              </DropdownButton>
+            <Form.Group className="mb-3" style={{ display: "inline" }}>
+              <Form.Label style={{display:"inline"}}>Gender : </Form.Label>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <Form.Check name="gender" value="male" type="radio" label="male"/>
+                <Form.Check name="gender" value="female" type="radio" label="female"/>
+              </div>
             </Form.Group>
             <Form.Group className="mb-3" style={{ display: "inline" }}>
               <Form.Label>
@@ -53,13 +83,13 @@ const Signup = () => {
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <Form.Check
                   name="insurance"
-                  aria-label="radio 1"
+                  value="yes"
                   type="radio"
                   label="Yes"
                 />
                 <Form.Check
                   name="insurance"
-                  aria-label="radio 1"
+                  value="no"
                   type="radio"
                   label="No"
                 />
