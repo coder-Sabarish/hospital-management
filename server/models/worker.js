@@ -18,7 +18,7 @@ const WorkerSchema = new Schema({
     },
     availabile: {
         type: Boolean,
-        default: true
+        default: false
     },
     availabile_time : {
         from : {
@@ -76,11 +76,7 @@ const WorkerSchema = new Schema({
         type: Number,
         required: [true,"patients_limit is Required"]
     },
-    active: {
-        type: Boolean,
-        default: true
-    }
 
 });
 
-module.exports = mongoose.model("Booking", WorkerSchema);
+module.exports = mongoose.model("Workers", WorkerSchema);

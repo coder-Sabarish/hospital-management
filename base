@@ -29,7 +29,6 @@ Worker:
 	Date of quiting
 	Assigned Patients (Array)
 	Patients Limit
-	active
 	
 logs:
 	isEmergency
@@ -43,11 +42,14 @@ logs:
 	Amount Paid
 	
 Appointment Booking:
-	Patient Id
-	Guardian (Array)
-	Guardian Number
-	issue Categery
-	Booking Date (Slot availability)
+	Booking Id
+	Patient Name
+	Patient Gender
+	Date of birth
+	Specialist
+	Doctor
+	Date
+	Time
 	
 Facilities:
 	General ward bed (count)
