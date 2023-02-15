@@ -2,20 +2,50 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const cors = require("cors");
+// const Tem = require("./models/worker")
 
-const authRoute = require('./routes/AuthRoutes')
+const authRoute = require('./routes/AuthRoutes');
+const BookingRoute = require("./routes/BookingRoutes");
+const AvailabiltyRoute = require("./routes/AvailabiltyRoutes");
 
 dotenv.config();
 const app = express();
 
 //middlewares
-app.use(bodyParser.json({limit: "30mb", extended: true}));
-app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 
 //Routes
 app.use("/auth", authRoute);
-app.use("/", (req,res)=> {res.send("fs");});
+app.use("/booking",BookingRoute);
+app.use("/availability",AvailabiltyRoute);
+// app.get("/insert", async (req,res)=> {
+//     const tem = new Tem({
+//         name: "Ranjith Kumar",
+//         role : "doctor",
+//         gender : "male",
+//         availabile_time : {
+//             from: "09:00",
+//             to: "17:00"
+//         },
+//         number: 9500242913,
+//         email : "saravanakkumar.20cse@kongu.edu",
+//         password : "SAK@2003",
+//         photo : "photo",
+//         speciality : "general",
+//         salary : 50000,
+//         location : "erode",
+//         experience_years : "5",
+//         date_of_joining : '2020-12-09',
+//         patients_limit : 10
+//     })
+//     await tem.save();
+//     res.send("done");
+// })
 
 //mongoose connection
 const PORT = process.env.PORT || 6000;

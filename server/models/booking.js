@@ -2,24 +2,27 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const BookingSchema = new Schema({
 
-    patient_id: {
+    booking_id: {
         type: Schema.ObjectId,
         required: [true,"Patient ID is Required"]
     },
-    guardian : String,
-    guardian_number: {
-        type: Number,
-        min: [1000000000, "Enter a Valid Phone number"],
-        max: [9999999999, "Enter a Valid Phone number"],
-    },
-    issue_catagery: {
+    name : String,
+
+    gender : {
         type: String,
-        required: [true,"Issue_catagery is Required"]
+        required: [true,"Gender is Required"]
     },
+    date_of_joining: Date,
+    specialist: String,
+    doctor: String,
     booking_date:{
         type: Date,
         required: [true,"Date is Required"],
         min:Date.now,
+    },
+    time: {
+        from: String,
+        to: String
     }
 
 });

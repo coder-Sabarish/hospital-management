@@ -6,10 +6,6 @@ const FacilitiesSchema = new Schema({
         type: Number,
         min:0
     },
-    normal_rooms : {
-        type: Number,
-        min:0
-    },
     vip_rooms : {
         type : Number,
         min:0

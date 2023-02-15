@@ -51,3 +51,8 @@ form {
   color: blue;
   text-align: center;
 }
+
+#warning {
+  color: red;
+  display: none;
+}

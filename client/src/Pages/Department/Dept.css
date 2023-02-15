@@ -1,0 +1,14 @@
+h4 {
+  color: blue;
+}
+p {
+  font-size: large;
+}
+.special {
+  display: flex;
+  justify-content: center;
+  height: fitContent;
+  background-color: lightBlue;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
