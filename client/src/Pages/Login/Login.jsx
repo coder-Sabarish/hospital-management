@@ -23,7 +23,7 @@ function Login() {
     });
         const LoggedIn = await LoginResponse.json();
         if(!LoggedIn.msg){
-          localStorage.setItem("userProfile", JSON.stringify(LoggedIn.token));
+          localStorage.setItem("userProfile", LoggedIn.token);
           navigate("/home");
          }
          else{

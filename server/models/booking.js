@@ -12,18 +12,13 @@ const BookingSchema = new Schema({
         type: String,
         required: [true,"Gender is Required"]
     },
-    date_of_joining: Date,
-    specialist: String,
+    dob: String,
+    branch: String,
     doctor: String,
     booking_date:{
-        type: Date,
+        type: String,
         required: [true,"Date is Required"],
-        min:Date.now,
     },
-    time: {
-        from: String,
-        to: String
-    }
 
 });
 

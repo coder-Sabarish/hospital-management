@@ -3,36 +3,49 @@ import "./Login.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
+import Validate from "./Validate"
 
 const Signup = () => {
 
   const navigate = useNavigate();
+
+  const validate = (event) => {
+    /* validation here */
+    handleSubmit(event);
+  }
+
   const handleSubmit = async(event) => {
     event.preventDefault();
-    const SignupResponse = await fetch('http://localhost:5000/auth/signup',{
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        "name" : event.target.name.value,
-        "mobile_numer" : event.target.mobile_numer.value,
-        "aadhar_number" : event.target.aadhar_number.value,
-        "email" : event.target.email.value,
-        "password" : event.target.password.value,
-        "gender" : event.target.gender.value,
-        "has_insurence" : event.target.insurance.value==="yes"? true:false
-      })
-    });
-        const SignedUp = await SignupResponse.json();
-        if(!SignedUp.error){
-          console.log(SignedUp);
-          navigate("/login");
-         }
-         else{
-          console.log(SignedUp.error)
-         }
+    if (!Validate(event)) {
+      return ;
+    }
+    else{
+        const SignupResponse = await fetch('http://localhost:5000/auth/signup',{
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          "name" : event.target.name.value,
+          "mobile_numer" : event.target.mobile_numer.value,
+          "aadhar_number" : event.target.aadhar_number.value,
+          "email" : event.target.email.value,
+          "password" : event.target.password.value,
+          "gender" : event.target.gender.value,
+          "has_insurence" : event.target.insurance.value==="yes"? true:false
+        })
+      });
+          const SignedUp = await SignupResponse.json();
+          if(!SignedUp.error){
+            console.log(SignedUp);
+            navigate("/login");
+          }
+          else{
+            console.log(SignedUp.error)
+          }
+    }
+    
   };
 
   return (
@@ -48,7 +61,7 @@ const Signup = () => {
               justifyContent: "center",
               borderRadius: "1em",
             }}
-            onSubmit={(handleSubmit)}
+            onSubmit={(validate)}
           >
             <h2 className="title">Signup</h2>
             <Form.Group className="mb-3">
