@@ -6,7 +6,9 @@ import About from "./Pages/About/About";
 import Home from "./Pages/Home/Home";
 import Contact from "./Pages/Contact/Contact";
 import Booking from "./Pages/Booking/Booking";
-import Department from "./Pages/Department/Department"
+import Department from "./Pages/Department/Department";
+import "bootstrap";
+
 
 
 function App() {

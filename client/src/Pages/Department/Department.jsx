@@ -2,9 +2,12 @@ import React from "react";
 import "./Dept.css";
 import data from "./exporter";
 import ListIt from "./ListIt";
+import Navbar from "./../../Components/Navbar/navbar"
+
 function Department() {
   return (
     <div>
+      <Navbar/>
       <div className="special">
         <h1>Our Departments</h1>
       </div>

@@ -4,6 +4,7 @@ const {verifyToken} = require("./../middleware/verifyToken")
 
 const router = express.Router();
 
+router.get("/getdoctors", verifyToken ,booking.getDoctors);
 router.post("/", verifyToken ,booking.book);
 
 

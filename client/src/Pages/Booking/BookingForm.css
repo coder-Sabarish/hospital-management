@@ -1,0 +1,38 @@
+h3{
+    margin-left:19%;
+}
+h5{
+    margin-left:32%;
+}
+
+.form-wrapper{
+    height: 75vh;
+    width: 60vh;
+}
+.name{
+    margin-top: 1%;
+    margin-left:27%;
+}
+.dof{
+    margin-top: 1%;
+    margin-left:27%;
+}
+.form-group1{
+    margin-top:1%;
+    margin-left:27%;
+   
+}
+.form-group2{
+    margin-top:1%;
+    margin-left:27%;
+}
+.form-group3{
+    margin-top:1%;
+    margin-left:27%;
+}
+.drop1{
+    width: 15%;
+}
+#section{
+    background-color: coral;
+}
